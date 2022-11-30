@@ -1,38 +1,50 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: white;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container-main {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  /* background-color: rgb(255, 161, 46); */
 }
 
-.App-link {
-  color: #61dafb;
+.images-full {
+  width: 100%;
+  height: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.container-center {
+  position: relative;
+  margin-top: 153.91px;
+  width: 1314px;
+  height: auto;
+  background-color: rgb(170, 214, 48);
+  box-shadow: 0 0 12px 5px rgba(0, 0, 0, 0.096);
+  overflow: hidden;
+}
+
+/* Test Code */
+.test-card-post {
+  width: 282px;
+  height: 264px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 6px;
+  border: none;
+  box-shadow: 0 0 10px 10px rgba(100, 100, 100, 0.021);
+}
+
+.test-img-fit-size {
+  width: 1314px;
+  height: 373px;
 }
