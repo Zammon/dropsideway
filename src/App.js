@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Contactpage from './Component/Pages/ContactPage/Contactpage';
 import Errorpage from './Component/Pages/ErrorPage/Errorpage';
+import Filterpage from './Component/Pages/FilterPage/Filterpage';
 //CSS import
 import Homepage from './Component/Pages/HomePage/Homepage';
 import Mappage from './Component/Pages/MapPage/Mappage';
@@ -21,6 +22,9 @@ function App() {
           <Route path='/qanda' element={<Qapage />}/>
           <Route path='/map' element={<Mappage />} />
           <Route path='/contact' element={<Contactpage />}/>
+          <Route path='/search/filter/'>
+            <Route path=':type' element={<Filterpage />}/>
+          </Route>
           <Route path='*' element={<Errorpage />}/>
         </Routes> {/* Use Router in react-router-dom */}
       {/* <Footer /> */}

@@ -8,6 +8,7 @@ import Footer from '../../Tools/Footer/Footer';
 //Component import
 import imgs from '../../Models/Slideimg';
 import dpu from '../../../Images/dpuSlide_01.png'
+import { Link } from 'react-router-dom';
 //Model import
 
 export default function Homepage(){
@@ -51,24 +52,29 @@ export default function Homepage(){
         <div className='contain-item-top-homepage'>
             
             <div className="area-slide-homepage">
+                
                 <div className="slide-homepage">
                     <div className="area-images-slideshow-homepage" style={{ transform: `translate3d(${slides*-1314}px, 0, 0)`}}>
                         {mapImages}
                     </div>
                 </div>
+                
                 <div className="area-pointer-homepage">
                     {mapPoint}
                 </div>
+                
             </div>
             
             <div className="area-filter-homepage">
                 <div className='area-filter-item-homepage'>
-                    <Selectfilter title="บริเวณที่พบของหาย"/>
-                    <Selectfilter title="ประเภทของหาย"/>
-                    <Selectfilter title="ประเภทโพสส์"/>
-                    <button className='filter-item-button-homepage'>
-                        ค้นหา
-                    </button>
+                    <Selectfilter title="บริเวณที่พบของหาย" onChange=""/>
+                    <Selectfilter title="ประเภทของหาย" onChange=""/>
+                    <Selectfilter title="ประเภทโพสส์" onChange=""/>
+                    <Link to="/search/filter/type">
+                        <button className='filter-item-button-homepage'>
+                            ค้นหา
+                        </button>
+                    </Link> 
                 </div>
             </div>
 

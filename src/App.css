@@ -6,6 +6,7 @@
 
 body {
   background-color: white;
+  overflow-y: overlay;
 }
 
 .container-main {
@@ -19,11 +20,17 @@ body {
   /* background-color: rgb(255, 161, 46); */
 }
 
+/* Tag div to in div will full scale*/
+.div-full {
+  width: 100%;
+  height: 100%;
+}
+/* Tag img in div will full scale*/
 .images-full {
   width: 100%;
   height: 100%;
 }
-
+/* Tag div to center every page in project */
 .container-center {
   position: relative;
   margin-top: 153.91px;
