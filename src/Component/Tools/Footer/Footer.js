@@ -6,10 +6,10 @@ export default function Footer() {
         <div className="container-footer">
             <div className="contain-area-footer">
                 <div className="contain-item-top-footer">
-                    Footer Top
+                    Logo...
                 </div>
                 <div className="contain-item-bottom-footer">
-                    Footer Bootm
+                    ©DropSideWay
                 </div>
             </div>
         </div>

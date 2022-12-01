@@ -9,6 +9,15 @@
     border: none;
     border-radius: 6px;
     box-shadow: 0 0 10px 10px rgba(100, 100, 100, 0.021);
+    cursor: pointer; 
+    transition: all .2s ease;
+}
+
+.container-card-post:hover {
+    position: relative;
+    z-index: 2;
+    transition: all .5s ease;
+    box-shadow: 0 0 30px 7px rgba(151, 151, 151, 0.274);
 }
 
 .image-card-post {
@@ -18,6 +27,7 @@
     margin-bottom: 2px;
     border: none;
     background-color: darkgray;
+    overflow: hidden;
 }
 
 .title-card-post {
@@ -55,6 +65,19 @@
 .area-date-time-card-post {
     font-size: 12px;
     color: #525252;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 120px;
+    height: 100%;
+    /* background-color: #FF740F; */
+}
+
+.date-card-post,.time-card-post {
+    width: auto;
+    height: auto;
+    padding: 0 3px;
+    /* background-color: rgb(231, 29, 29); */
 }
 
 .area-type-card-post {

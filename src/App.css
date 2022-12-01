@@ -20,6 +20,10 @@ body {
   /* background-color: rgb(255, 161, 46); */
 }
 
+.navlink-text-none {
+  text-decoration: none;
+}
+
 /* Tag div to in div will full scale*/
 .div-full {
   width: 100%;
@@ -36,6 +40,7 @@ body {
   margin-top: 153.91px;
   width: 1314px;
   height: auto;
+  min-height: ;
   background-color: rgb(170, 214, 48);
   box-shadow: 0 0 12px 5px rgba(0, 0, 0, 0.096);
   overflow: hidden;
