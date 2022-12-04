@@ -7,12 +7,17 @@ import { IoIosArrowDown } from 'react-icons/io'
 //React-icons import
 import { NavLink, useParams } from "react-router-dom";
 //React-Router-Dom import
-
-
+import { logodpu } from "../../Models/Slideimg";
+//Model import
 export default function Navbar() {
     const [statushover, setStatusHover] = useState(false);
     //Animetion CSS
-
+    
+    function getEnter(event) {
+        if(event.key === 'Enter') {
+            console.log("Enter เข้าได้");
+        }
+    }
 
     return(
         <div className="container-navbar">
@@ -20,7 +25,7 @@ export default function Navbar() {
                 <div className="contain-item-top-navbar">
                     
                     <div className="area-logo-navbar">
-                       <img className="images-full" src="logoDPU.png" />
+                       <img className="images-full" src={logodpu} />
                     </div>
                     
                     <div className="area-search-navbar">
@@ -28,7 +33,7 @@ export default function Navbar() {
                             <BiSearch fill="#ffffff" />
                             {/* <img className="images-full" src="" /> */}
                         </div>
-                        <input className="area-input-navbar" placeholder="ค้นหา คุณกำลังมองหาอะไร, คุณทำของหายแถวไหน"/>
+                        <input className="area-input-navbar font-noto" placeholder="ค้นหา คุณกำลังมองหาอะไร, คุณทำของหายแถวไหน" onKeyPress={(e)=>getEnter(e)}/>
                     </div>
                     
                     <div className="area-login-navbar">
@@ -51,7 +56,7 @@ export default function Navbar() {
                                 Q&A
                             </div>
                             <div className={`area-menu-icon-navbar ${statushover?"area-menu-icon-turn-on-navbar":"area-menu-icon-turn-off-navbar"}`}>
-                                <IoIosArrowDown  />
+                                <IoIosArrowDown />
                             </div>
                             <div className=""></div>
                         </div>

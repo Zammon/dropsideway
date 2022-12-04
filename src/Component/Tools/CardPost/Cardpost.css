@@ -1,4 +1,5 @@
 .container-card-post {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,7 +11,7 @@
     border-radius: 6px;
     box-shadow: 0 0 10px 10px rgba(100, 100, 100, 0.021);
     cursor: pointer; 
-    transition: all .2s ease;
+    transition: all .5s ease;
 }
 
 .container-card-post:hover {
@@ -31,25 +32,63 @@
 }
 
 .title-card-post {
-    display: flex;
+    white-space: nowrap;
     justify-content: center;
+    text-align: center;
     align-items: center;
     text-overflow: ellipsis;
     overflow: hidden;
-    width: 275.15px;
+    font-size: 18.5px;
+    width: 100%;
+    padding: 5px 0 0 5px;
     height: 38px;
+    color: black;
     /* background-color: blueviolet; */
 }
 
 .place-card-post {
-    display: flex;
-    justify-content: center;
+    display: inline-flex;
+    justify-content: flex-start;
+    white-space: nowrap;
     align-items: center;
-    font-size: 14px;
-    color: #525252;
-    width: 100%;
+    overflow: hidden;
+    font-size: 12px;
+    color: #B9B9B9;
+    width: 90%;
     height: 35px;
+    /* padding: 0 20px; */
     margin-bottom: 4px;
+    /* background-color: aqua; */
+}
+
+.tags-card-post {
+    width: auto;
+    height: auto;
+    padding: 2px 8px 0 8px;
+    outline: 2px solid #B9B9B9;
+    border-radius: 12px;
+    margin-right: 10px;
+}
+
+.title-text-card-post {
+    font-size: 13px;
+    margin-right: 8px;
+}
+
+.area-lostlocation-card-post,.area-tagpost-card-post {
+    display: flex;
+    width: 100%;
+    height: auto;
+    /* background-color: blueviolet; */
+}
+
+.area-lostlocation-card-post {
+    justify-content: center;
+}
+
+.area-tagpost-card-post {
+    position: absolute;
+    right: 10px;
 }
 
 .area-card-post {
@@ -58,7 +97,7 @@
     align-items: center;
     width: 100%;
     height: 24px;
-    padding: 0 20px;
+    padding: 0 10px;
     /* background-color: aquamarine; */
 }
 
@@ -68,16 +107,35 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    width: 120px;
+    width: 148px;
     height: 100%;
     /* background-color: #FF740F; */
 }
 
 .date-card-post,.time-card-post {
+    display: flex;
+    align-items: center;
     width: auto;
     height: auto;
     padding: 0 3px;
     /* background-color: rgb(231, 29, 29); */
+}
+
+.text-date-card-post,.text-time-card-post {
+    width: auto;
+    height: auto;
+    margin-right: 3px;
+    margin-top: 3px;
+    color: #6d6d6d;
+}
+
+.icons-date-card-post,.icons-time-card-post {
+    display: flex;
+    align-items: center;
+    width: auto;
+    height: auto;
+    /* background-color: aqua; */
+    margin-right: 3px;
 }
 
 .area-type-card-post {
@@ -92,14 +150,4 @@
     background-color: #fff;
     border: 2px solid;
     border-radius: 4px;
-}
-
-.find {
-    color: #FF740F;
-    border-color: #FF740F;
-}
-
-.meet {
-    color: #2ED384;
-    border-color: #2ED384;
 }

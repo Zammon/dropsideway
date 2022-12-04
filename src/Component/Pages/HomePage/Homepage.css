@@ -105,6 +105,29 @@
     border: 1px solid #AFAFAF;
     border-radius: 6px;
     background-color: white;
+    transition: all .5s ease;
+}
+
+.filter-item-button-none-homepage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    font-weight: bold;
+    color: #AFAFAF;
+    width: 142px;
+    height: 34px;
+    border: 1px solid #AFAFAF;
+    border-radius: 6px;
+    background-color: white;
+    transition: all .5s ease;
+}
+
+.filter-item-button-none-homepage:hover {
+    transition: all .5s ease;
+    color: #AFAFAF;
+    background-color: #f3f3f3;
+    border: 1px solid #AFAFAF;
 }
 
 .filter-item-button-homepage:hover {
@@ -124,6 +147,18 @@
     height: auto;
     /* min-height: 1810px; */
     padding: 30px 72px;
+    margin-top: 500px;
+    background-color: #F5F5F5;
+}
+
+.area-content-null-homepage {
+    display: flex;
+    color: #919191;
+    font-size: 14px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 274px;
     margin-top: 500px;
     background-color: #F5F5F5;
 }

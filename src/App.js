@@ -19,10 +19,6 @@ import { api } from './ModuleUrl';
 
 function App() {
 
-  useEffect(()=>{
-
-  },[]);
-
   return (
     <div className="container-main">
       <Navbar />
@@ -37,7 +33,7 @@ function App() {
           <Route path='/contact' element={<Contactpage />}/>
           {/* Filterpage */}
           <Route path='/search/filter'>
-            <Route path=':type' element={<Filterpage />}/>
+            <Route path=':area/:typeitem/:typeposts'element={<Filterpage />}/>
           </Route>
           {/* PostPage */}
           <Route path='/post'>

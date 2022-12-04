@@ -2,6 +2,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: NotoSans-Semi-B;
 }
 
 body {
@@ -31,8 +32,13 @@ body {
 }
 /* Tag img in div will full scale*/
 .images-full {
+  border: none;
   width: 100%;
   height: 100%;
+}
+
+.object-fit {
+  object-fit: cover;
 }
 /* Tag div to center every page in project */
 .container-center {
@@ -40,10 +46,41 @@ body {
   margin-top: 153.91px;
   width: 1314px;
   height: auto;
-  min-height: ;
+  min-height: 621px;
   background-color: rgb(170, 214, 48);
   box-shadow: 0 0 12px 5px rgba(0, 0, 0, 0.096);
   overflow: hidden;
+}
+
+.find {
+  color: #FF740F;
+  border-color: #FF740F;
+}
+
+.meet {
+  color: #2ED384;
+  border-color: #2ED384;
+}
+
+.overflow-blur-color {
+  position: absolute;
+  right: 0;
+  width: 50px;
+  height: 100%;
+  background-image: linear-gradient(90deg, rgba(25, 136, 247, 0) 0%,#f5f5f5de 50%, #F5F5F5 100%);
+}
+
+.back-drop {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+  background-color: rgba(0, 0, 0, 0.788);
+  padding: 50px 0;
+  width: 100vw;
+  height: 100vh;
+  cursor: pointer;
 }
 
 /* Test Code */
@@ -60,3 +97,4 @@ body {
   width: 1314px;
   height: 373px;
 }
+

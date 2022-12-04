@@ -106,6 +106,8 @@
     height: 33px;
     border-radius: 3px;
     color: #000000;
+    outline-color: transparent;
+    border: none;
 }
 
 .navlink-set:active{
@@ -123,12 +125,14 @@
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
-    
+    border-color: transparent;
     -webkit-user-drag: none;
     -webkit-user-drag: none;
     -khtml-user-drag: none;
     -moz-user-drag: none;
     -o-user-drag: none;
+    outline-color: transparent;
+    transition: all .5s ease;
     /* background-color: coral; */
     /* margin-left: 38px; */
 }
@@ -137,6 +141,7 @@
     /* color: #000000; */
     outline: 1px solid #8a4fa350;
     background-color: #8a4fa321;
+    /* transition: all .5s ease; */
     cursor: pointer;
 }
 
@@ -175,12 +180,12 @@
 
 .area-menu-icon-turn-on-navbar {
     transition: all .5s ease;
-    transform: rotate(-0.5turn);;
+    transform: rotate(-0.5turn);
 }
 
 .area-menu-icon-turn-off-navbar {
     transition: all .5s ease;
-    transform: rotate(0turn);;
+    transform: rotate(0turn);
 }
 
 /* - - - - - - - - - - - - */

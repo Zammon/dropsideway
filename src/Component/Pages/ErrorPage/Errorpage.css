@@ -1,0 +1,9 @@
+.area-content-errorpage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    min-height: 83.3vh;
+    background-color: #F5F5F5;
+}

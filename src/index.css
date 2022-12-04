@@ -11,3 +11,59 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+/* NotoSans */
+@font-face {
+  font-family: "NotoSans-L";
+  src: local("NotoSans-L"),url("./fonts/Noto/NotoSansThai_Condensed-Light.ttf") format("truetype");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "NotoSans-R";
+  src: local("NotoSans-R"),url("./fonts/Noto/NotoSansThai_Condensed-Regular.ttf") format("truetype");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "NotoSans-B";
+  src: local("NotoSans-B"),url("./fonts/Noto/NotoSansThai_Condensed-SemiBold.ttf") format("truetype");
+  font-weight: bold;
+}
+
+/* NotoExtra */
+@font-face {
+  font-family: "NotoSans-Extra-L";
+  src: local("NotoSans-Extra-L"),url("./fonts/NotoExtra/NotoSansThai_ExtraCondensed-Light.ttf") format("truetype");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "NotoSans-Extra-R";
+  src: local("NotoSans-Extra-R"),url("./fonts/NotoExtra/NotoSansThai_ExtraCondensed-Regular.ttf") format("truetype");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "NotoSans-Extra-B";
+  src: local("NotoSans-Extra-B"),url("./fonts/NotoExtra/NotoSansThai_ExtraCondensed-SemiBold.ttf") format("truetype");
+  font-weight: bold;
+}
+
+/* NotoSemi */
+@font-face {
+  font-family: "NotoSans-Semi-L";
+  src: local("NotoSans-Semi-L"),url("./fonts/NotoSemi/NotoSansThai_SemiCondensed-Light.ttf") format("truetype");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "NotoSans-Semi-R";
+  src: local("NotoSans-Semi-R"),url("./fonts/NotoSemi/NotoSansThai_SemiCondensed-Regular.ttf") format("truetype");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "NotoSans-Semi-B";
+  src: local("NotoSans-Semi-B"),url("./fonts/NotoSemi/NotoSansThai_SemiCondensed-SemiBold.ttf") format("truetype");
+  font-weight: bold;
+}
