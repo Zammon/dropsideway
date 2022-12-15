@@ -53,7 +53,7 @@ export default function Navbar() {
                         <NavLink to="/qanda" className={({isActive})=>isActive?"navlink-set navlink-text-none menu-navbar-focus":"navlink-set navlink-text-none"}>
                         <div className="menu-navbar" onMouseMove={()=>{setStatusHover(true)}} onMouseLeave={()=>{setStatusHover(false)}}>
                             <div className="menu-texts-navbar">
-                                Q&A
+                                วิธีการใช้งาน
                             </div>
                             <div className={`area-menu-icon-navbar ${statushover?"area-menu-icon-turn-on-navbar":"area-menu-icon-turn-off-navbar"}`}>
                                 <IoIosArrowDown />

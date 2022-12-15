@@ -155,7 +155,6 @@ export default function Postpage(){
                             <div className='area-user-username-postpage'>
                                 {id}
                             </div>
-                             
                         </div>
                         <div className='area-contact-postpage'>
                             <div className='area-contact-tel-postpage'>

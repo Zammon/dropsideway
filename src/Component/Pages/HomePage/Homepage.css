@@ -139,6 +139,22 @@
     cursor: pointer;
 }
 
+.filter-item-button-active-homepage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    font-weight: bold;
+    width: 142px;
+    height: 34px;
+    color: #ffffff;
+    background-color: #8A4FA3;
+    border: 1px solid #774b8a;
+    border-radius: 6px;
+    transition: all .5s ease;
+    cursor: pointer;
+}
+
 .area-content-homepage {
     display: grid;
     grid-template-columns: 282px 282px 282px 282px;

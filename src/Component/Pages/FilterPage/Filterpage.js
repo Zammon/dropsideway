@@ -110,8 +110,9 @@ export default function Filterpage(){
                 <Selectfilter title="บริเวณที่พบของหาย" item={typeArea && typeArea} changvalue={filterArea} OnChange={setFilterArea}/>
                 <Selectfilter title="หมวดหมู่ของหาย" item={typeItems && typeItems} changvalue={filterItems} OnChange={setFilterItems}/>
                 <Selectfilter title="ประเภทโพสส์" item={typePost && typePost} changvalue={filterPost} OnChange={setFilterPost}/>
-                {statusSearch?<Link to={`/search/filter/${filterArea}/${filterItems}/${filterPost}`} className='navlink-text-none'>
-                <button className='filter-item-button-filterpage'>ค้นหา</button></Link> : <button className='filter-item-button-none-filterpage'>ค้นหา</button>}
+                <Link to={`${statusSearch?`/search/filter/${filterArea}/${filterItems}/${filterPost}`:""}`} className='navlink-text-none'>
+                    <button className={`${statusSearch?'filter-item-button-filterpage':'filter-item-button-none-filterpage'}`}>ค้นหา</button>
+                </Link>
             </div>
         </div>
         {cardPosts && mapCardPost.length!==0 ? <div className={`area-content-filterpage ${mapCardPost.length<=8?"rows-2":""}`}>{mapCardPost}</div>:<div className='area-content-null-filterpage'> No missing items about  <div className='text-about-filterpage'> "{`${area!=="-"?area:""} ${typeitem!=="-"?typeitem:""} ${typeposts!=="-"?typeposts:""}`}"</div></div>}

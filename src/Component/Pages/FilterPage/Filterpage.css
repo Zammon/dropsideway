@@ -64,13 +64,14 @@
     align-items: center;
     font-size: 15px;
     font-weight: bold;
-    color: #AFAFAF;
+    color: #ffffff;
+    background-color: #8A4FA3;
+    border: 1px solid #774b8a;
     width: 142px;
     height: 34px;
-    border: 1px solid #AFAFAF;
     border-radius: 6px;
-    background-color: white;
     transition: all .5s ease;
+    cursor: pointer;
 }
 
 .filter-item-button-none-filterpage {
@@ -95,12 +96,11 @@
     border: 1px solid #AFAFAF;
 }
 
-.filter-item-button-filterpage:hover {
-    /* filter: brightness(1.5); */
+/* .filter-item-button-filterpage:hover {
     transition: all .5s ease;
     color: #ffffff;
     background-color: #8A4FA3;
     border: 1px solid #774b8a;
     cursor: pointer;
-}
+} */
 
