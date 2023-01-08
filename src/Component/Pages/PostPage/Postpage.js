@@ -31,10 +31,9 @@ export default function Postpage(){
     const [showfullscel,setShowFullScel] = useState(false);
     const navigate = useNavigate();
     const target = async ()=>{
-        const data = await axios.get(`https://${api}/api/Filters/post/getpost/${id}`);
+        const data = await axios.get(`https://localhost:7113/api/DropsidewayWebsite/Getpost/${id}`);
         setTargetPost(data);
         setType(data.data.type);
-        
     };
     
     useEffect(()=>{
@@ -79,12 +78,12 @@ export default function Postpage(){
     return(
     <>  {showfullscel ? 
             <div className='area-show-postpage'>
-                <ShowPosts imgindex={targetPost && targetPost.data.nameImage}/>
+                <ShowPosts imgindex={targetPost && targetPost.data.nameImage[targetImages]}/>
                 <div className='back-drop' onClick={()=> setShowFullScel(false)}></div>
             </div>
         :""}
         
-        <div className='container-center'>
+        <div className='container-center' style={{height: "100vh"}}>
             <div className='container-postpage'>
                 {/* Left content */}
                 <div className='item-left-postpage'>
@@ -108,13 +107,13 @@ export default function Postpage(){
                             onMouseLeave={() => setStyle(false)}>
                                 ดูเพิ่มเติม
                             </div>:""}
-                            <img className='images-full object-fit' src={targetPost && targetPost.data.nameImage} />
+                            <img className='images-full object-fit' src={targetPost && targetPost.data.nameImage[targetImages]} />
                         </div>
                         <div className='area-images-postpage'>
-                            <ImagesIndex index={0} target={targetPost && targetPost.data.nameImage}/>
-                            <ImagesIndex index={1}/>
-                            <ImagesIndex index={2}/>
-                            <ImagesIndex index={3}/>
+                            <ImagesIndex index={0} target={targetPost && targetPost.data.nameImage[0]}/>
+                            <ImagesIndex index={1} target={targetPost && targetPost.data.nameImage[1]}/>
+                            <ImagesIndex index={2} target={targetPost && targetPost.data.nameImage[2]}/>
+                            <ImagesIndex index={3} target={targetPost && targetPost.data.nameImage[3]}/>
                         </div>
                     </div>
                 </div>

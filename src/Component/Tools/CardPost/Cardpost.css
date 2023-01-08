@@ -11,14 +11,15 @@
     border-radius: 6px;
     box-shadow: 0 0 10px 10px rgba(100, 100, 100, 0.021);
     cursor: pointer; 
-    transition: all .5s ease;
+    transition: all .1s ease;
 }
 
 .container-card-post:hover {
     position: relative;
     z-index: 2;
-    transition: all .5s ease;
+    transition: all .3s ease;
     box-shadow: 0 0 30px 7px rgba(151, 151, 151, 0.274);
+    scale: 1.03;
 }
 
 .image-card-post {
@@ -27,8 +28,8 @@
     border-radius: 6px;
     margin-bottom: 2px;
     border: none;
-    background-color: darkgray;
-    overflow: hidden;
+    background-color: rgb(230, 230, 230);
+    overflow: hidden; 
 }
 
 .title-card-post {

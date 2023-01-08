@@ -3,7 +3,7 @@
     justify-content: flex-start;
     align-items: flex-start;
     width: 100%;
-    height: auto;
+    height: 100%;
     /* background-color: cadetblue!important; */
     background-color: #F5F5F5;
     padding: 42px 67px 0 67px;
@@ -107,6 +107,7 @@
     background-color: #E2E2E2;
     border-radius: 6px;
     overflow: hidden;
+    transition: all .5s ease;
 }
 
 .image-index-target-postpage {
@@ -117,6 +118,7 @@
     overflow: hidden;
     outline: 2px solid #FEA632;
     cursor: pointer;
+    transition: all .5s ease;
 }
 
 /* Right item */

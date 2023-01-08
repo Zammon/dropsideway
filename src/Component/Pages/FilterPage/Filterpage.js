@@ -23,19 +23,19 @@ export default function Filterpage(){
         var data;
         var urls;
         if(area!=="-"&&typeitem!=="-"&&typeposts!=="-"){
-            data = await axios.get(`https://${api}/api/Home/get/GetFilterSearch?area=${area}&typeitem=${typeitem}&typepost=${typeposts}`)
+            data = await axios.get(`https://localhost:7113/api/DropsidewayWebsite/Getfiltersearch?area=${area}&typeitem=${typeitem}&typepost=${typeposts}`)
         } else if (area!=="-"&&typeitem!=="-"){
-            data = await axios.get(`https://${api}/api/Home/get/GetFilterSearch?area=${area}&typeitem=${typeitem}`)
+            data = await axios.get(`https://localhost:7113/api/DropsidewayWebsite/Getfiltersearch?area=${area}&typeitem=${typeitem}`)
         } else if (area!=="-"&&typeposts!=="-"){
-            data = await axios.get(`https://${api}/api/Home/get/GetFilterSearch?area=${area}&typepost=${typeposts}`)
+            data = await axios.get(`https://localhost:7113/api/DropsidewayWebsite/Getfiltersearch?area=${area}&typepost=${typeposts}`)
         } else if (typeitem!=="-"&&typeposts!=="-"){
-            data = await axios.get(`https://${api}/api/Home/get/GetFilterSearch?typeitem=${typeitem}&typepost=${typeposts}`)
+            data = await axios.get(`https://localhost:7113/api/DropsidewayWebsite/Getfiltersearch?typeitem=${typeitem}&typepost=${typeposts}`)
         } else if (area!=="-"){
-            data = await axios.get(`https://${api}/api/Home/get/GetFilterSearch?area=${area}`)
+            data = await axios.get(`https://localhost:7113/api/DropsidewayWebsite/Getfiltersearch?area=${area}`)
         } else if (typeitem!=="-"){
-            data = await axios.get(`https://${api}/api/Home/get/GetFilterSearch?typeitem=${typeitem}`)
+            data = await axios.get(`https://localhost:7113/api/DropsidewayWebsite/Getfiltersearch?typeitem=${typeitem}`)
         } else if (typeposts!=="-"){
-            data = await axios.get(`https://${api}/api/Home/get/GetFilterSearch?typepost=${typeposts}`)
+            data = await axios.get(`https://localhost:7113/api/DropsidewayWebsite/Getfiltersearch?typepost=${typeposts}`)
         } 
         setCardPosts(data);
         console.log(data);
@@ -69,19 +69,19 @@ export default function Filterpage(){
 
         // Set path api
         const typepost = async () => {
-            const data = await axios.get(`https://${api}/api/Filters/find/FindType/ประเภทโพส`);
+            const data = await axios.get(`https://localhost:7113/api/DropsidewayWebsite/Findtype/ประเภทโพส`);
             setTypePost(data);
             console.log(data);
         }
       
         const typearea = async () => {
-            const data = await axios.get(`https://${api}/api/Filters/find/FindType/บริเวณพื้นที่พบเจอของหาย`);
+            const data = await axios.get(`https://localhost:7113/api/DropsidewayWebsite/Findtype/บริเวณพื้นที่พบเจอของหาย`);
           setTypeArea(data);
           console.log(data);
         }
       
         const typeitems = async () => {
-            const data = await axios.get(`https://${api}/api/Filters/find/FindType/ประเภทสิ่งของหาย`);
+            const data = await axios.get(`https://localhost:7113/api/DropsidewayWebsite/Findtype/ประเภทสิ่งของหาย`);
           setTypeItems(data);
           console.log(data);
         }

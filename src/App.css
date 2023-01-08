@@ -39,17 +39,19 @@ body {
 
 .object-fit {
   object-fit: cover;
+  cursor: pointer;
 }
 /* Tag div to center every page in project */
 .container-center {
+  display: flex;
+  flex-direction: column;
   position: relative;
-  margin-top: 153.91px;
+  padding-top: 153.91px;
   width: 1314px;
   height: auto;
-  min-height: 621px;
-  background-color: rgb(170, 214, 48);
+  /* background-color: rgb(170, 214, 48); */
   box-shadow: 0 0 12px 5px rgba(0, 0, 0, 0.096);
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .find {

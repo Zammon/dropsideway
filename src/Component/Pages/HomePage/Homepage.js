@@ -33,25 +33,25 @@ export default function Homepage(){
     const [cardPosts, setCardPosts] = useState();
     // Set path api
     const typepost = async () => {
-        const data = await axios.get(`https://${api}/api/Filters/find/FindType/ประเภทโพส`);
+        const data = await axios.get(`https://localhost:7113/api/DropsidewayWebsite/Findtype/ประเภทโพส`);
         setTypePost(data);
         console.log(data);
     }
   
     const typearea = async () => {
-        const data = await axios.get(`https://${api}/api/Filters/find/FindType/บริเวณพื้นที่พบเจอของหาย`);
+        const data = await axios.get(`https://localhost:7113/api/DropsidewayWebsite/Findtype/บริเวณพื้นที่พบเจอของหาย`);
       setTypeArea(data);
       console.log(data);
     }
   
     const typeitems = async () => {
-        const data = await axios.get(`https://${api}/api/Filters/find/FindType/ประเภทสิ่งของหาย`);
+        const data = await axios.get(`https://localhost:7113/api/DropsidewayWebsite/Findtype/ประเภทสิ่งของหาย`);
       setTypeItems(data);
       console.log(data);
     }
     
     const cardpostItems = async () =>{
-        const data = await axios.get(`https://${api}/api/Home/get/GetCardPosts`);
+        const data = await axios.get(`https://localhost:7113/api/DropsidewayWebsite/Getcardposts`);
         setCardPosts(data);
         console.log(data);
     }
@@ -121,7 +121,7 @@ export default function Homepage(){
     
     return(
     <>
-     <div className="container-center">
+     <div className="container-center" style={{flexDirection: "column"}}>
         {/* Slide + Filter (Top)*/}
         <div className='contain-item-top-homepage'>
             
@@ -149,7 +149,7 @@ export default function Homepage(){
 
         </div>
         {/* Content (Bottom) */}
-        {cardPosts ? <div className='area-content-homepage'>{mapCardPost}</div>:<div className='area-content-null-homepage'>No missing items.</div>}
+        {cardPosts&&cardPosts.data.length!==0 ? <div className='area-content-homepage'>{mapCardPost}</div>:<div className='area-content-null-homepage'>No missing items.</div>}
      </div>
      <Footer />
      </>
