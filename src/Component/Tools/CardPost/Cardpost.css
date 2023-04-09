@@ -23,6 +23,9 @@
 }
 
 .image-card-post {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 275.03px;
     height: 146.82px;
     border-radius: 6px;

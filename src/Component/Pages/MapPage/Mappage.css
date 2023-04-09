@@ -1,9 +1,71 @@
 .area-content-mappage {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: auto;
     min-height: 83.3vh;
     background-color: #F5F5F5;
+}
+
+.area-detail-map-mappage {
+    display: grid;
+    justify-content: space-evenly;
+    grid-template-columns: 500px 500px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 35px;
+    /* background-color: aquamarine; */
+}
+
+.area-faculty-mappage {
+    display: flex;
+    align-items: center;
+    width: 500px;
+    height: auto;
+    /* background-color: brown; */
+    margin-right: 10px;
+}
+
+.area-image-icon-faculty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+}
+
+.area-title-mappage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    font-weight: bold;
+    width: 100%;
+    height: auto;
+    margin: 50px 0 26px 0;
+    
+}
+
+.title-text-map-mappage {
+    font-size: 20px;
+    font-weight: bold;
+    width: auto;
+    height: auto;
+    /* background-color: darkorange; */
+}
+
+.detail-text-map-mappage {
+    font-size: 17px;
+    /* font-weight: bold; */
+    width: auto;
+    height: auto;
+    /* background-color: darkgreen; */
+}
+
+.area-text-title-mappage {
+    display: flex;
+    flex-direction: column;
+    width: 330px;
 }

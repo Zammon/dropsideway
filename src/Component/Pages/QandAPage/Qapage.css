@@ -1,9 +1,43 @@
-.area-content-qandaage {
+.area-content-qandapage {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
     width: 100%;
     height: auto;
+    padding: 0 75px;
     min-height: 83.3vh;
     background-color: #F5F5F5;
+}
+
+.rows-howto-qandapage {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+}
+
+.rows-howto-qandapage:last-child {
+    margin-bottom: 50px;
+}
+
+.title-howto-qandapage {
+    width: auto;
+    height: auto;
+    padding: 10px;
+    font-size: 24px;
+    color: #ffff;
+    background-color: #8A4FA3;
+    margin-top: 25px;
+}
+
+.detail-howto-qandapage {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    font-size: 17px;
+    padding: 0 20px;
+}
+
+.detail-howto-qandapage li {
+    margin-top: 15px;
 }

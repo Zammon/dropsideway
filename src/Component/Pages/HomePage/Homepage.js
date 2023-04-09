@@ -1,68 +1,50 @@
 import React, { useEffect, useRef, useState } from 'react';
-//React imoport
 import './Homepage.css';
-//CSS import
 import Selectfilter from '../../Tools/SelectFillter/Selectfillter';
 import Cardpost from '../../Tools/CardPost/Cardpost';
 import Footer from '../../Tools/Footer/Footer';
-//Component import
 import { imgs } from '../../Models/Slideimg';
 import { Link, useLocation } from 'react-router-dom';
-import { api } from '../../../ModuleUrl'
-//Model import
-import axios from 'axios';
-//Axios import
-
+import FetchListCard, { PushFetchListCard } from '../../../Contexts/Fetchs/FetchListCard';
+import FetchFindFilter from '../../../Contexts/Fetchs/FetchFilterType';
 export default function Homepage(){
     const { pathname } = useLocation();
     useEffect(()=>{
         window.scrollTo(0, 0);
     }, [pathname])
     
-    /* Set Search */
+    const [pageIndex, setPageIndex] = useState(0);
     const [statusSearch,setStatusSearch] = useState(false);
-    /* Set get return filters */
     const[filterPost, setFilterPost] = useState("-");
     const[filterArea, setFilterArea] = useState("-");
     const[filterItems, setFilterItems] = useState("-");
-    // ---------------------------------------------------------------------------------------------
-    // Set object from api
     const [typePost, setTypePost] = useState();
     const [typeArea, setTypeArea] = useState();
     const [typeItems, setTypeItems] = useState();
-    const [cardPosts, setCardPosts] = useState();
-    // Set path api
-    const typepost = async () => {
-        const data = await axios.get(`https://localhost:7113/api/DropsidewayWebsite/Findtype/ประเภทโพส`);
-        setTypePost(data);
-        console.log(data);
-    }
-  
-    const typearea = async () => {
-        const data = await axios.get(`https://localhost:7113/api/DropsidewayWebsite/Findtype/บริเวณพื้นที่พบเจอของหาย`);
-      setTypeArea(data);
-      console.log(data);
-    }
-  
-    const typeitems = async () => {
-        const data = await axios.get(`https://localhost:7113/api/DropsidewayWebsite/Findtype/ประเภทสิ่งของหาย`);
-      setTypeItems(data);
-      console.log(data);
-    }
-    
-    const cardpostItems = async () =>{
-        const data = await axios.get(`https://localhost:7113/api/DropsidewayWebsite/Getcardposts`);
-        setCardPosts(data);
-        console.log(data);
-    }
+    const [cardPosts, setCardPosts] = useState([]);
+
+    const handleScroll = () => {
+        if (window.innerHeight + document.documentElement.scrollTop === document.documentElement.offsetHeight)
+        {
+          setPageIndex(prevPageIndex => prevPageIndex + 1);
+          return;
+        }
+    };
 
     useEffect(()=>{
-            typearea();
-            typeitems();
-            typepost();
-            cardpostItems();
-        },[]);
-        
+        FetchFindFilter('ประเภทโพสต์', setTypePost)
+        FetchFindFilter('บริเวณพื้นที่พบเจอของหาย', setTypeArea)
+        FetchFindFilter('ประเภทสิ่งของหาย', setTypeItems)
+        FetchListCard(setCardPosts, pageIndex);
+        const test = window.addEventListener('scroll', handleScroll);
+        return () => test;
+    },[]);
+
+    useEffect(()=>{
+        if(!cardPosts || pageIndex===0) return;
+        PushFetchListCard(setCardPosts, pageIndex)
+    },[pageIndex])
+
     useEffect(()=>{
        if(filterPost!=="-"||filterItems!=="-"||filterArea!=="-") {
         setStatusSearch(true);
@@ -71,23 +53,22 @@ export default function Homepage(){
        }
     },[filterPost,filterItems,filterArea])
 
-    
-    // ---------------------------------------------------------------------------------------------
-    /* Map Component */
-        const mapCardPost = cardPosts&&cardPosts.data.map((e,i)=>{
-            return <Cardpost key={i} id={ cardPosts && e.idPost} title={ cardPosts && e.title} img={cardPosts && e.nameImage } type={cardPosts && e.type } tag={cardPosts && e.tagsPost} area={ cardPosts && e.areaLost} date={ cardPosts && e.datePost} time={ cardPosts && e.timePost}/>
-        });
-    /* Silde Home */
+    const mapCardPost = cardPosts&&cardPosts?.map((e,i)=>{
+        return <Cardpost key={i} id={ cardPosts && e.idPost} title={ cardPosts && e.title} img={cardPosts && e.image } type={cardPosts && e.type } tag={cardPosts && e.tag} area={ cardPosts && e.area} date={ cardPosts && e.date} time={ cardPosts && e.time}/>
+    });
+
     const [slides, setSlide] = useState(0);
-    /* Map Slide */
-    const mapImages = imgs.map((m,i)=>{
+
+    const mapImages = imgs?.map((m,i)=>{
          return <ImagesSlide key={i} img={m.image} />
      })
-    const mapPoint = imgs.map((m,i)=>{
+
+    const mapPoint = imgs?.map((m,i)=>{
         return <PointSlide key={i} num={i}/>
     })
-    /* Set time out to slide */
+
     const timeouts = useRef(null)
+
     function resettime() {
         if(timeouts.current){
             clearTimeout(timeouts.current);
@@ -101,7 +82,6 @@ export default function Homepage(){
         return ()=> resettime()
     },[slides]) 
 
-    /* slide image component */
     function ImagesSlide(props){
         const { img } = props;
         return(
@@ -110,18 +90,16 @@ export default function Homepage(){
             </div>
         )
     }
-    /* slide point component */
+    
     function PointSlide(props) {
         return(
             <div className={`${slides===props.num?"pointers-homapage-active":"pointers-homapage-none-active"}`} onClick={()=>{setSlide(props.num)}}></div>
         )
     }
-    
-    // if(cardPosts) return;
-    
+
     return(
     <>
-     <div className="container-center" style={{flexDirection: "column"}}>
+     <div className="container-center" style={{flexDirection: "column", marginTop: '154px'}}>
         {/* Slide + Filter (Top)*/}
         <div className='contain-item-top-homepage'>
             
@@ -149,7 +127,11 @@ export default function Homepage(){
 
         </div>
         {/* Content (Bottom) */}
-        {cardPosts&&cardPosts.data.length!==0 ? <div className='area-content-homepage'>{mapCardPost}</div>:<div className='area-content-null-homepage'>No missing items.</div>}
+        {cardPosts&&cardPosts?.length!==0 ? 
+            <div className='area-content-homepage'>{mapCardPost}</div>
+            :
+            <div className='area-content-null-homepage'>No missing items.</div>
+        }
      </div>
      <Footer />
      </>

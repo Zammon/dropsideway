@@ -1,16 +1,10 @@
 import React, { useEffect, useState } from 'react';
-//React imoport
 import { useParams, Link, useLocation } from 'react-router-dom';
-//React-Router-Dom import
-import { api } from '../../../ModuleUrl';
-//Model URL import
-import axios from 'axios';
-//Axios import
 import Selectfilter from '../../Tools/SelectFillter/Selectfillter';
-//Compotent import
 import './Filterpage.css'
 import Cardpost from '../../Tools/CardPost/Cardpost';
-//CSS import
+import FetchFilter from '../../../Contexts/Fetchs/FetchFilter';
+import FetchFindFilter from '../../../Contexts/Fetchs/FetchFilterType';
 export default function Filterpage(){
     
     const { pathname } = useLocation();
@@ -19,89 +13,37 @@ export default function Filterpage(){
     }, [pathname])
     
     const { area, typeitem, typeposts } = useParams();
-    const filterSearch = async ()=> {
-        var data;
-        var urls;
-        if(area!=="-"&&typeitem!=="-"&&typeposts!=="-"){
-            data = await axios.get(`https://localhost:7113/api/DropsidewayWebsite/Getfiltersearch?area=${area}&typeitem=${typeitem}&typepost=${typeposts}`)
-        } else if (area!=="-"&&typeitem!=="-"){
-            data = await axios.get(`https://localhost:7113/api/DropsidewayWebsite/Getfiltersearch?area=${area}&typeitem=${typeitem}`)
-        } else if (area!=="-"&&typeposts!=="-"){
-            data = await axios.get(`https://localhost:7113/api/DropsidewayWebsite/Getfiltersearch?area=${area}&typepost=${typeposts}`)
-        } else if (typeitem!=="-"&&typeposts!=="-"){
-            data = await axios.get(`https://localhost:7113/api/DropsidewayWebsite/Getfiltersearch?typeitem=${typeitem}&typepost=${typeposts}`)
-        } else if (area!=="-"){
-            data = await axios.get(`https://localhost:7113/api/DropsidewayWebsite/Getfiltersearch?area=${area}`)
-        } else if (typeitem!=="-"){
-            data = await axios.get(`https://localhost:7113/api/DropsidewayWebsite/Getfiltersearch?typeitem=${typeitem}`)
-        } else if (typeposts!=="-"){
-            data = await axios.get(`https://localhost:7113/api/DropsidewayWebsite/Getfiltersearch?typepost=${typeposts}`)
-        } 
-        setCardPosts(data);
-        console.log(data);
-    }
-        /* Call api */
-      
-
-        /* Set Search */
-        const [statusSearch,setStatusSearch] = useState(false);
-    
-        /* Set get return filters */
-        const[filterPost, setFilterPost] = useState("-");
-        const[filterArea, setFilterArea] = useState("-");
-        const[filterItems, setFilterItems] = useState("-");
-        // ---------------------------------------------------------------------------------------------
+    const [statusSearch,setStatusSearch] = useState(false);
+    const[filterPost, setFilterPost] = useState("-");
+    const[filterArea, setFilterArea] = useState("-");
+    const[filterItems, setFilterItems] = useState("-");
         
-        // Set object from api
-        const [typePost, setTypePost] = useState();
-        const [typeArea, setTypeArea] = useState();
-        const [typeItems, setTypeItems] = useState();
-        const [cardPosts, setCardPosts] = useState();
+    const [typePost, setTypePost] = useState();
+    const [typeArea, setTypeArea] = useState();
+    const [typeItems, setTypeItems] = useState();
+    const [cardPosts, setCardPosts] = useState();
         
         useEffect(()=>{
-        filterSearch();
+        FetchFilter( setCardPosts, area, typeitem, typeposts);
         },[area, typeitem, typeposts])
         
-        /* Map CardPosts */
         const mapCardPost = cardPosts&&cardPosts.data.map((e,i)=>{
-            return <Cardpost key={i} id={ cardPosts && e.idPost} title={ cardPosts && e.title} img={cardPosts && e.nameImage } type={cardPosts && e.type } tag={cardPosts && e.tagsPost} area={ cardPosts && e.areaLost} date={ cardPosts && e.datePost} time={ cardPosts && e.timePost}/>
+            return <Cardpost key={i} id={ cardPosts && e.idPost} title={ cardPosts && e.title} img={cardPosts && e.image } type={cardPosts && e.type } tag={cardPosts && e.tag} area={ cardPosts && e.area} date={ cardPosts && e.date} time={ cardPosts && e.time}/>
         });
-
-        // Set path api
-        const typepost = async () => {
-            const data = await axios.get(`https://localhost:7113/api/DropsidewayWebsite/Findtype/ประเภทโพส`);
-            setTypePost(data);
-            console.log(data);
-        }
-      
-        const typearea = async () => {
-            const data = await axios.get(`https://localhost:7113/api/DropsidewayWebsite/Findtype/บริเวณพื้นที่พบเจอของหาย`);
-          setTypeArea(data);
-          console.log(data);
-        }
-      
-        const typeitems = async () => {
-            const data = await axios.get(`https://localhost:7113/api/DropsidewayWebsite/Findtype/ประเภทสิ่งของหาย`);
-          setTypeItems(data);
-          console.log(data);
-        }
         
         useEffect(()=>{
-                typearea();
-                typeitems();
-                typepost();
-            },[]);
+            FetchFindFilter('ประเภทโพสต์', setTypePost);
+            FetchFindFilter('บริเวณพื้นที่พบเจอของหาย', setTypeArea);
+            FetchFindFilter('ประเภทสิ่งของหาย', setTypeItems);
+        },[]);
         
         useEffect(()=>{
-            if(filterPost!=="-"||filterItems!=="-"||filterArea!=="-") {
-                setStatusSearch(true);
-            } else {
+        if(filterPost!=="-"||filterItems!=="-"||filterArea!=="-") {
+            setStatusSearch(true);
+        } else {
                 setStatusSearch(false);
-            }
+        }
         },[filterPost,filterItems,filterArea])
-         
-
-  
     
     return(
     <div className='container-center'>

@@ -5,7 +5,7 @@
     right: 0;
     width: auto;
     height: auto;
-    box-shadow: 0 -7px 12px 10px rgba(0, 0, 0, 0.137);
+    box-shadow: 0 -7px 12px 3px rgba(44, 44, 44, 0.096);
 }
 
 /* Area Slide All */
@@ -174,7 +174,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: auto;
+    height: 500px;
     margin-top: 345px;
     background-color: #F5F5F5;
 }

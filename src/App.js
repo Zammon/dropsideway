@@ -1,5 +1,4 @@
-import axios from 'axios';
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 //React imoport
 import './App.css';
@@ -11,11 +10,8 @@ import Homepage from './Component/Pages/HomePage/Homepage';
 import Mappage from './Component/Pages/MapPage/Mappage';
 import Postpage from './Component/Pages/PostPage/Postpage';
 import Qapage from './Component/Pages/QandAPage/Qapage';
-import Footer from './Component/Tools/Footer/Footer';
+import SearchFilter from './Component/Pages/SearchFilter/SearchFilter';
 import Navbar from './Component/Tools/Navbar/Navbar';
-//Component import
-import { api } from './ModuleUrl';
-//Url import
 
 function App() {
 
@@ -34,6 +30,10 @@ function App() {
           {/* Filterpage */}
           <Route path='/search/filter'>
             <Route path=':area/:typeitem/:typeposts'element={<Filterpage />}/>
+          </Route>
+          {/* Searchs */}
+          <Route path='/searchs'>
+            <Route path=':search' element={<SearchFilter />}/>
           </Route>
           {/* PostPage */}
           <Route path='/post'>

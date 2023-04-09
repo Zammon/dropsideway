@@ -4,6 +4,13 @@
   margin: 0;
   font-family: NotoSans-Semi-B;
 }
+a {
+  text-decoration: none;
+}
+
+a:active {
+  color: #8A4FA3;
+}
 
 body {
   background-color: white;

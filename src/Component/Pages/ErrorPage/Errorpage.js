@@ -15,7 +15,14 @@ export default function Errorpage() {
         <>
             <div className="container-center">
                 <div className="area-content-errorpage">
-                    Error 404 That's an error.
+                    <div className="area-text-errorpage">
+                        <div className="header-errorpage">
+                            Error 404
+                        </div>
+                        <div className="detail-errorpage">
+                            ไม่พบเนื้อหาที่กำลังค้นหาภายในเว็บไซต์
+                        </div>
+                    </div>
                 </div>
             </div>
         </>

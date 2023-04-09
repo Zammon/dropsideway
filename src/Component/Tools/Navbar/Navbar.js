@@ -1,31 +1,39 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 //React import
 import './Navbar.css'
 //CSS import
 import { BiSearch } from 'react-icons/bi'
 import { IoIosArrowDown } from 'react-icons/io'
 //React-icons import
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink, useNavigate, useParams } from "react-router-dom";
 //React-Router-Dom import
 import { logodpu } from "../../Models/Slideimg";
 //Model import
 export default function Navbar() {
     const [statushover, setStatusHover] = useState(false);
+    const [search, setSearch] = useState('');
+    const searchInput = useRef(null);
     //Animetion CSS
-    
+    const navigate = useNavigate();
     function getEnter(event) {
         if(event.key === 'Enter') {
-            console.log("Enter เข้าได้");
+            if(!event.target.value) return;
+            setSearch('');
+            searchInput.current.blur()
+            navigate(`/searchs/${event.target.value}`)
         }
+    }
+
+    const hadleOnChange = (e) => {
+        setSearch(e.target.value);
     }
 
     return(
         <div className="container-navbar">
             <div className="contain-area-navbar">
                 <div className="contain-item-top-navbar">
-                    
                     <div className="area-logo-navbar">
-                       <img className="images-full" src={logodpu} />
+                       <img className="images-full" src={logodpu} alt=''/>
                     </div>
                     
                     <div className="area-search-navbar">
@@ -33,7 +41,12 @@ export default function Navbar() {
                             <BiSearch fill="#ffffff" />
                             {/* <img className="images-full" src="" /> */}
                         </div>
-                        <input className="area-input-navbar font-noto" placeholder="ค้นหา คุณกำลังมองหาอะไร, คุณทำของหายแถวไหน" onKeyPress={(e)=>getEnter(e)}/>
+                        <input className="area-input-navbar font-noto"
+                        ref={searchInput}
+                        placeholder="ค้นหา คุณกำลังมองหาอะไร, คุณทำของหายแถวไหน"
+                        value={search}
+                        onChange={hadleOnChange}
+                        onKeyDown={(e)=>getEnter(e)}/>
                     </div>
                     
                     <div className="area-login-navbar">
@@ -55,9 +68,9 @@ export default function Navbar() {
                             <div className="menu-texts-navbar">
                                 วิธีการใช้งาน
                             </div>
-                            <div className={`area-menu-icon-navbar ${statushover?"area-menu-icon-turn-on-navbar":"area-menu-icon-turn-off-navbar"}`}>
+                            {/* <div className={`area-menu-icon-navbar ${statushover?"area-menu-icon-turn-on-navbar":"area-menu-icon-turn-off-navbar"}`}>
                                 <IoIosArrowDown />
-                            </div>
+                            </div> */}
                             <div className=""></div>
                         </div>
                         </NavLink>

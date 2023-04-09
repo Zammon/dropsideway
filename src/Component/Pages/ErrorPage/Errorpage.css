@@ -1,9 +1,33 @@
 .area-content-errorpage {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: auto;
     min-height: 83.3vh;
     background-color: #F5F5F5;
+}
+
+.header-errorpage {
+    font-size: 22PX;
+    font-weight: 500;
+    color: #838383;
+}
+
+.detail-errorpage {
+    font-size: 18PX;
+    font-weight: 500;
+    color: #838383;
+    margin-top: 10px;
+    width: 100%;
+    height: auto;
+}
+
+.area-text-errorpage {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 200px;
+    /* background-color: blanchedalmond; */
 }

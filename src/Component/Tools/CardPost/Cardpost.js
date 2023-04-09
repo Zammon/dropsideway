@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from "react";
-//React import
 import './Cardpost.css'
-//CSS import
 import { CutDate, CutTime } from "../../../Services/CutdatetimeService";
 import { Link } from "react-router-dom";
-//Services import
 import {BsFillCalendarDateFill} from "react-icons/bs"
-import {BiTime} from "react-icons/bi"
+import { BiTime } from "react-icons/bi"
+import { BsImageAlt } from "react-icons/bs"
 
 export default function Cardpost(props) {
     const {id, title, img, area, type, tag, date, time } = props
@@ -26,7 +24,11 @@ export default function Cardpost(props) {
         <Link className="navlink-text-none" to={`/post/${id}`}>
             <div className="container-card-post">
                 <div className="image-card-post">
-                    <img className="images-full object-fit" src={img} />
+                    {img ? 
+                        <img className="images-full object-fit" src={img} />
+                    :
+                        <BsImageAlt size={50} color="#5F5F5F" />
+                    }
                 </div>
                 <div className="title-card-post">
                     {title}

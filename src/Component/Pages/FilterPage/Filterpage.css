@@ -53,9 +53,9 @@
     align-items: center;
     width: 100%;
     height: 123px;
-    /* background-color: cornflowerblue !important; */
     background-color: white;
-    box-shadow: 0 -7px 12px 10px rgba(0, 0, 0, 0.137);
+    border-bottom: 1px solid rgba(163, 163, 163, 0.507);
+    /* box-shadow: 0 -7px 12px 3px rgba(44, 44, 44, 0.096); */
 }
 
 .filter-item-button-filterpage {
