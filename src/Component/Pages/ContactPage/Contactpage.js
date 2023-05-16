@@ -22,10 +22,10 @@ export default function Contactpage(){
                                 ช่องทางติดต่อ
                             </div>
                             <div className="detail-contant-contactpage">
-                                มหาวิทยาลัยธุรกิจบัณฑิตฯ<br/>
-                                254 ถนนพญาไท แขวงวังใหม่ เขตปทุมวัน กรุงเทพมหานคร 10330<br/>
-                                โทรศัพท์ 0 2215 3555, 0 2218 2000<br/>
-                                อีเมล pr@chula.ac.th
+                                มหาวิทยาลัยธุรกิจบัณฑิตย์<br/>
+                                110/1-4 ถ.ประชาชื่น แขวงทุ่งสองห้อง เขตหลักสี่ กรุงเทพฯ 10210<br/>
+                                ดทร 02-9547300<br/>
+                                อีเมล contact@dpu.ac.th
                             </div>
                         </div>
                         <div className="area-top-contant-right-contactpage">
@@ -46,9 +46,9 @@ export default function Contactpage(){
                             </div>
                             <div className="detail-contant-contactpage">
                                 <ul>
-                                    <li>Facebook <a href='#'>คลิ๊กที่นี่</a></li>
-                                    <li>Instargram <a href='#'>คลิ๊กที่นี่</a></li>
-                                    <li>Line <a href='#' >คลิ๊กที่นี่</a></li>
+                                    <li>Facebook <a href='https://www.facebook.com/dpu.ac.th'>คลิกที่นี่</a></li>
+                                    <li>Instargram <a href='https://www.instagram.com/dpu_university/'>คลิกที่นี่</a></li>
+                                    <li>Twitter<a href='https://twitter.com/dhurakijpundit' >คลิกที่นี่</a></li>
                                 </ul>
                             </div>
                         </div>

@@ -32,6 +32,11 @@ export default function Homepage(){
     };
 
     useEffect(()=>{
+        if(!cardPosts || pageIndex===0) return;
+        PushFetchListCard(setCardPosts, pageIndex)
+    },[pageIndex]);
+
+    useEffect(()=>{
         FetchFindFilter('ประเภทโพสต์', setTypePost)
         FetchFindFilter('บริเวณพื้นที่พบเจอของหาย', setTypeArea)
         FetchFindFilter('ประเภทสิ่งของหาย', setTypeItems)
@@ -40,10 +45,6 @@ export default function Homepage(){
         return () => test;
     },[]);
 
-    useEffect(()=>{
-        if(!cardPosts || pageIndex===0) return;
-        PushFetchListCard(setCardPosts, pageIndex)
-    },[pageIndex])
 
     useEffect(()=>{
        if(filterPost!=="-"||filterItems!=="-"||filterArea!=="-") {
