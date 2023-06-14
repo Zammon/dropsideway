@@ -119,7 +119,7 @@ export default function Homepage(){
                 <div className='area-filter-item-homepage'>
                     <Selectfilter title="บริเวณที่พบของหาย" item={typeArea && typeArea} changvalue={filterArea} OnChange={setFilterArea}/>
                     <Selectfilter title="หมวดหมู่ของหาย" item={typeItems && typeItems} changvalue={filterItems} OnChange={setFilterItems}/>
-                    <Selectfilter title="ประเภทโพสส์" item={typePost && typePost} changvalue={filterPost} OnChange={setFilterPost}/>
+                    <Selectfilter title="ประเภทโพสต์" item={typePost && typePost} changvalue={filterPost} OnChange={setFilterPost}/>
                     <Link to={`${statusSearch?`/search/filter/${filterArea}/${filterItems}/${filterPost}`:""}`} className='navlink-text-none'>
                         <button className={`${statusSearch?"filter-item-button-active-homepage":"filter-item-button-none-homepage"}`}>ค้นหา</button>
                     </Link>

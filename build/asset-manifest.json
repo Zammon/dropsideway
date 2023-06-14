@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.4331c6aa.css",
-    "main.js": "/static/js/main.6549b52c.js",
+    "main.css": "/static/css/main.fbf5c318.css",
+    "main.js": "/static/js/main.f108261c.js",
     "static/js/787.4a89d6a1.chunk.js": "/static/js/787.4a89d6a1.chunk.js",
     "static/media/dpuSlide_01.png": "/static/media/dpuSlide_01.e08d217e7140f9e1a66e.png",
     "static/media/dpuSlide_03.png": "/static/media/dpuSlide_03.8719fb858b453298b17b.png",
@@ -20,12 +20,12 @@
     "static/media/Dropsideway_Logo.png": "/static/media/Dropsideway_Logo.fdc55b3d2836a9372ae6.png",
     "static/media/LPS.png": "/static/media/LPS.dfed02980bea634740e7.png",
     "index.html": "/index.html",
-    "main.4331c6aa.css.map": "/static/css/main.4331c6aa.css.map",
-    "main.6549b52c.js.map": "/static/js/main.6549b52c.js.map",
+    "main.fbf5c318.css.map": "/static/css/main.fbf5c318.css.map",
+    "main.f108261c.js.map": "/static/js/main.f108261c.js.map",
     "787.4a89d6a1.chunk.js.map": "/static/js/787.4a89d6a1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4331c6aa.css",
-    "static/js/main.6549b52c.js"
+    "static/css/main.fbf5c318.css",
+    "static/js/main.f108261c.js"
   ]
 }

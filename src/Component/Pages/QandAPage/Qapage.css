@@ -8,6 +8,18 @@
     background-color: #F5F5F5;
 }
 
+.title-rule {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    width: 100%;
+    height: 40px;
+}
+
+.detail-howto-qandapage ol { counter-reset: item }
+.detail-howto-qandapage ol li{ display: block }
+.detail-howto-qandapage ol li:before { content: counters(item, ".") " "; counter-increment: item }
+
 .rows-howto-qandapage {
     display: flex;
     flex-direction: column;

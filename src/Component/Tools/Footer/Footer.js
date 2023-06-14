@@ -75,10 +75,10 @@ export default function Footer() {
                                     <a href="/contact">ติดต่อ</a>
                                 </li>
                                 <li>
-                                    <a href="#">facebook</a>
+                                    <a href="https://www.facebook.com/dpu.ac.th">facebook</a>
                                 </li>
                                 <li>
-                                    <a href="#">instargram</a>
+                                    <a href="https://www.instagram.com/dpu_university/">instargram</a>
                                 </li>
                             </ul>
                         </div>
